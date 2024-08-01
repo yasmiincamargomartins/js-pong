@@ -23,8 +23,8 @@ let trilha;
 let ponto;
 let raquetada;
 function setup() {
-  trilha.loop;
   createCanvas(600, 400);
+  trilha.loop();
   
 }
 
@@ -101,6 +101,7 @@ function colisaoRaquete(){
     yBolinha + raio >= yRaqueteOponente &&
     yBolinha - raio <= yRaqueteOponente + alturaRaquete){
     velocidadexBolinha *= -1;
+    raquetada.play();
   }
 }
  function mostraPlacar(){
@@ -119,10 +120,12 @@ function contaPlacar(){
   //   contabiliza placar do oponente
   if(xBolinha - raio <= 0){
     placarOponente += 1;
+    ponto.play();
 }
  // contabiliza meu placar
   if(xBolinha + raio >= width){
     meuPlacar += 1;
+    ponto.play();
    }
 }
 
